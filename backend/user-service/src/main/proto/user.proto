@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package user;
+
+// https://protobuf.dev/reference/java/java-generated/
+option java_multiple_files = true;
+option java_package = "com.example.demo.stubs";
+option java_outer_classname = "UserServiceProto";
+
+// Define the UserService
+service UserService {
+  rpc GetUserById (GetUserByIdRequest) returns (UserResponse);
+  rpc GetUserByUsername (GetUserByUsernameRequest) returns (UserResponse);
+}
+
+// Messages
+
+message GetUserByIdRequest {
+  int64 user_id = 1;
+}
+
+message GetUserByUsernameRequest {
+  string username = 1;
+}
+
+message UserResponse {
+  int64 user_id = 1;
+  string username = 2;
+  string profile_picture_url = 3;
+}
