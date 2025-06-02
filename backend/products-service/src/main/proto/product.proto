@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package product;
+
+// https://protobuf.dev/reference/java/java-generated/
+option java_multiple_files = true;
+option java_package = "com.example.demo.stubs";
+option java_outer_classname = "ProductServiceProto";
+
+service ProductService {
+  rpc GetAllProducts (GetAllProductsRequest) returns (GetAllProductsResponse);
+  rpc GetProductById (GetProductByIdRequest) returns (Product);
+}
+
+message GetAllProductsRequest {
+
+}
+
+message GetAllProductsResponse {
+  repeated Product products = 1;
+}
+
+message Product {
+  int64 product_id = 1;
+  string product_name = 2;
+  int64 product_price = 3;
+  string product_picture_url = 4;
+}
+
+message GetProductByIdRequest {
+  int64 product_id = 1;
+}
