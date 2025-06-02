@@ -9,3 +9,21 @@ Here's a list of what I want to learn with this:
 Since this is just a basic learning example I simply want to create a basic frontend with some "products". A user, who's just going to be hardcoded and automatically signed in, can view products and add/remove them from their cart. Simple premise, but since this is my first time doing microservices, gRPC and GraphQL the complexity will be on the backend and that's where most of the learning will be happening. No fancy styling or responsive design, that's not the point of this project.
 
 This project is just a stepping stone to get into a more complex microservices + graphql + grpc project I plan to work on next.
+
+### Services overview
+User Service: Handles user info. The following info will be stored:
+- User ID
+- Username
+- Profile Picture Link
+
+Product Service: Handles products for sale. The following info will be stored:
+- Product ID
+- Product Name
+- Price
+- Picture Link
+
+Cart Service: Handles user cart. The following info will be stored:
+- User ID
+- Product ID
+- Count
+
